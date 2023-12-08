@@ -33,17 +33,17 @@
             this.dateLabel = new System.Windows.Forms.Label();
             this.isbnLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
+            this.authorTextBox = new System.Windows.Forms.TextBox();
+            this.isbnTextBox = new System.Windows.Forms.TextBox();
+            this.priceUpandDown = new System.Windows.Forms.NumericUpDown();
             this.dollarSignLabel = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AddBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.categoryLabel = new System.Windows.Forms.Label();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceUpandDown)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -91,33 +91,33 @@
             this.priceLabel.TabIndex = 4;
             this.priceLabel.Text = "Price: ";
             // 
-            // textBox1
+            // titleTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(605, 31);
-            this.textBox1.TabIndex = 5;
+            this.titleTextBox.Location = new System.Drawing.Point(154, 93);
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.Size = new System.Drawing.Size(605, 31);
+            this.titleTextBox.TabIndex = 5;
             // 
-            // textBox2
+            // authorTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 190);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(316, 31);
-            this.textBox2.TabIndex = 6;
+            this.authorTextBox.Location = new System.Drawing.Point(154, 190);
+            this.authorTextBox.Name = "authorTextBox";
+            this.authorTextBox.Size = new System.Drawing.Size(316, 31);
+            this.authorTextBox.TabIndex = 6;
             // 
-            // textBox3
+            // isbnTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(154, 283);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(316, 31);
-            this.textBox3.TabIndex = 7;
+            this.isbnTextBox.Location = new System.Drawing.Point(154, 283);
+            this.isbnTextBox.Name = "isbnTextBox";
+            this.isbnTextBox.Size = new System.Drawing.Size(316, 31);
+            this.isbnTextBox.TabIndex = 7;
             // 
-            // numericUpDown1
+            // priceUpandDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(154, 330);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(84, 31);
-            this.numericUpDown1.TabIndex = 8;
+            this.priceUpandDown.Location = new System.Drawing.Point(154, 330);
+            this.priceUpandDown.Name = "priceUpandDown";
+            this.priceUpandDown.Size = new System.Drawing.Size(84, 31);
+            this.priceUpandDown.TabIndex = 8;
             // 
             // dollarSignLabel
             // 
@@ -185,10 +185,10 @@
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.dollarSignLabel);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.priceUpandDown);
+            this.Controls.Add(this.isbnTextBox);
+            this.Controls.Add(this.authorTextBox);
+            this.Controls.Add(this.titleTextBox);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.isbnLabel);
             this.Controls.Add(this.dateLabel);
@@ -197,7 +197,7 @@
             this.Name = "AddBookForm";
             this.Text = "AddForm";
             this.Load += new System.EventHandler(this.AddForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceUpandDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,10 +210,10 @@
         private Label dateLabel;
         private Label isbnLabel;
         private Label priceLabel;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private NumericUpDown numericUpDown1;
+        private TextBox titleTextBox;
+        private TextBox authorTextBox;
+        private TextBox isbnTextBox;
+        private NumericUpDown priceUpandDown;
         private Label dollarSignLabel;
         private DateTimePicker dateTimePicker;
         private Button AddBtn;

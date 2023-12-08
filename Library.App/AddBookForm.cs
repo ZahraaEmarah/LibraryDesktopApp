@@ -1,4 +1,5 @@
 ﻿using Library.Data;
+using Library.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,34 @@ namespace Library.App
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            // Add TO DB Logic
+            LibContext.Categories.Load();
+            Category selectedCategory = (Category)categoryComboBox.SelectedItem;
+
+            if (selectedCategory != null)
+            {
+                var resultIndex = categoryComboBox.FindStringExact(selectedCategory.Title);
+                if (resultIndex > -1)
+                {
+                    Book newBook = new()
+                    {
+                        BookId = Guid.NewGuid().ToString(),
+                        Title = titleTextBox.Text,
+                        Author = authorTextBox.Text,
+                        BookISBN = isbnTextBox.Text,
+                        PublishDate = dateTimePicker.Value,
+                        BasePrice = priceUpandDown.Value,
+                        Category = selectedCategory
+                    };
+
+                    LibContext.Add(newBook);
+                    LibContext.SaveChanges();
+                    MessageBox.Show("Inserted Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }            
         }
     }
 }
