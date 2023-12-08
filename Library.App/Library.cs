@@ -1,6 +1,7 @@
 using Library.Data;
 using Library.Domain;
 using Microsoft.EntityFrameworkCore;
+using System.Windows.Forms;
 
 namespace Library.App
 {
@@ -82,6 +83,20 @@ namespace Library.App
         {
             UpdateBookForm f = new UpdateBookForm();
             f.Show();
+        }
+
+        private void reloadBtn_Click(object sender, EventArgs e)
+        {
+            Category selectedCategory = (Category)categoryComboBox.SelectedItem;
+
+            if (selectedCategory != null)
+            {
+                var resultIndex = categoryComboBox.FindStringExact(selectedCategory.Title);
+                if (resultIndex > -1)
+                {
+                    GetCategoryWithBooks(selectedCategory.Title);
+                }
+            }
         }
     }
 }

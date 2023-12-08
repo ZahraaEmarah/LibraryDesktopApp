@@ -40,6 +40,7 @@ namespace Library.App
             this.libraryContextBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.EditBtn = new System.Windows.Forms.Button();
             this.AddBtn = new System.Windows.Forms.Button();
+            this.reloadBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryContextBindingSource)).BeginInit();
@@ -109,11 +110,22 @@ namespace Library.App
             this.AddBtn.UseVisualStyleBackColor = true;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
+            // reloadBtn
+            // 
+            this.reloadBtn.Location = new System.Drawing.Point(439, 74);
+            this.reloadBtn.Name = "reloadBtn";
+            this.reloadBtn.Size = new System.Drawing.Size(112, 34);
+            this.reloadBtn.TabIndex = 7;
+            this.reloadBtn.Text = "Reload";
+            this.reloadBtn.UseVisualStyleBackColor = true;
+            this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
+            // 
             // Library
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1629, 650);
+            this.Controls.Add(this.reloadBtn);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.categoryLabel);
@@ -152,5 +164,6 @@ namespace Library.App
         private BindingSource libraryContextBindingSource;
         public Button EditBtn;
         private Button AddBtn;
+        private Button reloadBtn;
     }
 }
