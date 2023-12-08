@@ -38,6 +38,8 @@ namespace Library.App
             this.bookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryLabel = new System.Windows.Forms.Label();
             this.libraryContextBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EditBtn = new System.Windows.Forms.Button();
+            this.AddBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryContextBindingSource)).BeginInit();
@@ -85,11 +87,35 @@ namespace Library.App
             this.categoryLabel.TabIndex = 4;
             this.categoryLabel.Text = "Category:";
             // 
+            // EditBtn
+            // 
+            this.EditBtn.AccessibleName = "EditBtn";
+            this.EditBtn.Location = new System.Drawing.Point(1377, 79);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(240, 34);
+            this.EditBtn.TabIndex = 5;
+            this.EditBtn.Text = "Update Book";
+            this.EditBtn.UseVisualStyleBackColor = true;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.AccessibleName = "AddBtn";
+            this.AddBtn.Location = new System.Drawing.Point(1125, 79);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(240, 34);
+            this.AddBtn.TabIndex = 6;
+            this.AddBtn.Text = "Add New Book";
+            this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            // 
             // Library
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1629, 650);
+            this.Controls.Add(this.AddBtn);
+            this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.categoryLabel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.titleLabel);
@@ -124,5 +150,7 @@ namespace Library.App
         private DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn contextIdDataGridViewTextBoxColumn;
         private BindingSource libraryContextBindingSource;
+        public Button EditBtn;
+        private Button AddBtn;
     }
 }

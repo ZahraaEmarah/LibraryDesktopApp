@@ -30,18 +30,15 @@ namespace Library.App
 
         private void categoryComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            ComboBox comboBox = (ComboBox)sender;
             Category selectedCategory = (Category)categoryComboBox.SelectedItem;
-
-            var resultIndex = -1;
             
             if(selectedCategory != null)
             {
-                resultIndex = categoryComboBox.FindStringExact(selectedCategory.Title);
-            }
-            if(resultIndex > -1)
-            {
-                GetCategoryWithBooks(selectedCategory.Title);
+                var resultIndex = categoryComboBox.FindStringExact(selectedCategory.Title);
+                if (resultIndex > -1)
+                {
+                    GetCategoryWithBooks(selectedCategory.Title);
+                }
             }
         }
 
@@ -73,6 +70,18 @@ namespace Library.App
             {
                 column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            AddBookForm f = new AddBookForm();
+            f.Show();
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            UpdateBookForm f = new UpdateBookForm();
+            f.Show();
         }
     }
 }
