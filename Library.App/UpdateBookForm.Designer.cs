@@ -31,22 +31,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dollarSignLabel = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.priceUpandDown = new System.Windows.Forms.NumericUpDown();
+            this.isbnTextBox = new System.Windows.Forms.TextBox();
+            this.authorTextBox = new System.Windows.Forms.TextBox();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
             this.priceLabel = new System.Windows.Forms.Label();
             this.isbnLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
             this.authorLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.booksComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.updateBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceUpandDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,33 +77,33 @@
             this.dollarSignLabel.TabIndex = 20;
             this.dollarSignLabel.Text = "$";
             // 
-            // numericUpDown1
+            // priceUpandDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(146, 402);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(84, 31);
-            this.numericUpDown1.TabIndex = 19;
+            this.priceUpandDown.Location = new System.Drawing.Point(146, 402);
+            this.priceUpandDown.Name = "priceUpandDown";
+            this.priceUpandDown.Size = new System.Drawing.Size(84, 31);
+            this.priceUpandDown.TabIndex = 19;
             // 
-            // textBox3
+            // isbnTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 359);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(316, 31);
-            this.textBox3.TabIndex = 18;
+            this.isbnTextBox.Location = new System.Drawing.Point(146, 359);
+            this.isbnTextBox.Name = "isbnTextBox";
+            this.isbnTextBox.Size = new System.Drawing.Size(316, 31);
+            this.isbnTextBox.TabIndex = 18;
             // 
-            // textBox2
+            // authorTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(146, 273);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(316, 31);
-            this.textBox2.TabIndex = 17;
+            this.authorTextBox.Location = new System.Drawing.Point(146, 273);
+            this.authorTextBox.Name = "authorTextBox";
+            this.authorTextBox.Size = new System.Drawing.Size(316, 31);
+            this.authorTextBox.TabIndex = 17;
             // 
-            // textBox1
+            // titleTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 177);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(605, 31);
-            this.textBox1.TabIndex = 16;
+            this.titleTextBox.Location = new System.Drawing.Point(146, 177);
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.Size = new System.Drawing.Size(605, 31);
+            this.titleTextBox.TabIndex = 16;
             // 
             // priceLabel
             // 
@@ -150,13 +150,14 @@
             this.titleLabel.TabIndex = 11;
             this.titleLabel.Text = "Book Title: ";
             // 
-            // comboBox1
+            // booksComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(236, 87);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(453, 33);
-            this.comboBox1.TabIndex = 22;
+            this.booksComboBox.FormattingEnabled = true;
+            this.booksComboBox.Location = new System.Drawing.Point(236, 87);
+            this.booksComboBox.Name = "booksComboBox";
+            this.booksComboBox.Size = new System.Drawing.Size(453, 33);
+            this.booksComboBox.TabIndex = 22;
+            this.booksComboBox.SelectedIndexChanged += new System.EventHandler(this.booksComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -175,6 +176,7 @@
             this.updateBtn.TabIndex = 24;
             this.updateBtn.Text = "Update";
             this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // deleteBtn
             // 
@@ -185,6 +187,7 @@
             this.deleteBtn.TabIndex = 25;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // label3
             // 
@@ -213,13 +216,13 @@
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.booksComboBox);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.dollarSignLabel);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.priceUpandDown);
+            this.Controls.Add(this.isbnTextBox);
+            this.Controls.Add(this.authorTextBox);
+            this.Controls.Add(this.titleTextBox);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.isbnLabel);
             this.Controls.Add(this.dateLabel);
@@ -229,7 +232,7 @@
             this.Name = "UpdateBookForm";
             this.Text = "UpdateBookForm";
             this.Load += new System.EventHandler(this.UpdateBookForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceUpandDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,16 +243,16 @@
         private Label label1;
         private DateTimePicker dateTimePicker;
         private Label dollarSignLabel;
-        private NumericUpDown numericUpDown1;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private NumericUpDown priceUpandDown;
+        private TextBox isbnTextBox;
+        private TextBox authorTextBox;
+        private TextBox titleTextBox;
         private Label priceLabel;
         private Label isbnLabel;
         private Label dateLabel;
         private Label authorLabel;
         private Label titleLabel;
-        private ComboBox comboBox1;
+        private ComboBox booksComboBox;
         private Label label2;
         private Button updateBtn;
         private Button deleteBtn;

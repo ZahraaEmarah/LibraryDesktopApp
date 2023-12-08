@@ -33,5 +33,10 @@ namespace Library.App
         {
             populate_categoryComboBox();
         }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            // Add TO DB Logic
+        }
     }
 }
