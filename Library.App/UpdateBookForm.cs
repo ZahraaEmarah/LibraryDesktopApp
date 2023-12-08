@@ -61,7 +61,8 @@ namespace Library.App
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            // DB Logic
+            LibContext.SaveChanges();
+            MessageBox.Show("Updated Successfully");
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -70,10 +71,6 @@ namespace Library.App
             booksComboBox.SelectedItem = books[0];
             LibContext.SaveChanges();
             MessageBox.Show("Deleted Successfully");
-        }
-
-        private void booksComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
     }
 }

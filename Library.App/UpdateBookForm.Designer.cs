@@ -157,7 +157,6 @@
             this.booksComboBox.Name = "booksComboBox";
             this.booksComboBox.Size = new System.Drawing.Size(453, 33);
             this.booksComboBox.TabIndex = 22;
-            this.booksComboBox.SelectedIndexChanged += new System.EventHandler(this.booksComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
